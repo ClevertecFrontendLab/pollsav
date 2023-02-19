@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 100vh;
+  width: 1110px;
+}
+.content {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .container {
+    margin: 0 auto;
+    width: 640px;
+  }
+  .menu {
+    display: none;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 320px) {
+  .container {
+    margin: 0 auto;
+    width: 288px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

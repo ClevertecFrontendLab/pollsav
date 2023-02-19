@@ -1,0 +1,47 @@
+.error {
+  width: 1110px;
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 24px 16px 24px 16px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  background: #feebea;
+  border: 1.5px solid #f42c4f;
+  border-radius: 5px;
+}
+.error img {
+  object-fit: contain;
+  margin-right: 12px;
+}
+.button {
+  margin-left: 450px;
+  background: none;
+  border: none;
+}
+@media (max-width: 768px) {
+  .error {
+    top: 29%;
+    width: 640px;
+    z-index: 1000;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .button {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 320px) {
+  .error {
+    width: 288px;
+    z-index: 1000;
+  }
+  .button {
+    margin-left: 0px;
+  }
+}
