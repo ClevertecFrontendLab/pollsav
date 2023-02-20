@@ -1,0 +1,21 @@
+.nav_wrapper{
+    position: relative;
+    width: 825px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (max-width: 768px){
+    .nav_wrapper{
+        width: 640px;
+        justify-content: flex-start;
+        margin-bottom: 24px;
+    }
+}
+@media (max-width: 320px){
+    .nav_wrapper{
+        width: 288px;
+        justify-content: space-between;
+    }
+}

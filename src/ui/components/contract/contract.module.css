@@ -1,0 +1,82 @@
+.contract{
+    width: 825px;
+}
+h2{
+    font-weight: 700;
+    line-height: 40px;
+    font-size: 32px;
+}
+.descr{
+    margin-top: 32px!important;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+.descr > li{
+    margin: 16px 0 16px 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.descr2{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+.descr2 > li{
+    margin: 16px 0 16px 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.descr2 > li:nth-child(2){
+    margin-left: 60px;
+}
+.descr2 > li:nth-child(3){
+    margin-left: 60px;
+}
+.descr3{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+.descr3 > li{
+    margin: 16px 0 16px 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.descr3 > li:nth-child(2){
+    margin-left: 60px;
+}
+.descr3 > li:nth-child(3){
+    margin-left: 60px;
+}
+.descr3 > li:nth-child(6){
+    margin-left: 60px;
+}
+.descr3 > li:nth-child(7){
+    margin-left: 90px;
+}
+.descr3 > li:nth-child(8){
+    margin-left: 90px;
+}
+@media (max-width: 768px){
+    .contract{
+        width: 640px;
+    }
+}
+@media (max-width: 320px){
+    h2{
+     font-weight: 700;
+     font-size: 18px;
+     line-height: 28px;
+    }
+    .contract{
+        width: 288px;
+    }
+    .descr{
+        margin-top: 24px!important;
+        
+    }
+}

@@ -1,0 +1,120 @@
+.header{
+ height: 58px;   
+ margin: 32px 0 62px 0;
+ display: flex;
+ align-items: center;
+}
+.header_icon {
+    width: 165px;
+    height: 40px;
+    margin-right: 120px;
+}
+.header_icon > svg{
+    width: 165px;
+    height: 40px;
+}
+.menu_icon{
+    display: none;
+    width: 32px;
+    height: 32px;
+    position: relative;
+	z-index:2;
+	overflow: hidden;
+    border: none;
+    background-color: #fff;
+}
+.menu_icon span {
+    width: 26px;
+    height: 2px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #222222;
+	transition: all 0.5s;
+}
+.menu_icon span:nth-of-type(2){
+    top: calc(50% - 8px);
+}
+
+.menu_icon span:nth-of-type(3){
+    top: calc(50% + 8px);
+}
+.menu_icon.active span:nth-of-type(1){
+    display: none;
+}
+.menu_icon.active span:nth-of-type(2){
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg); 
+}
+.menu_icon.active span:nth-of-type(3){
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg); 
+}
+.title{
+    margin-right: 315px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+}
+.header_account{
+    width: 300px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.header_account > span{
+    margin-right: 16px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+}
+.header_account_icon{
+    width: 58px;
+    height: 58px;
+    filter: drop-shadow(0px 2px 4px rgba(191, 196, 201, 0.2)) drop-shadow(0px 3px 4px rgba(191, 196, 201, 0.18)) drop-shadow(0px 1px 5px rgba(191, 196, 201, 0.24));
+    border-radius: 150px;
+}
+@media (max-width: 768px){
+    .header{
+        margin: 22px 0 32px 0;
+    }
+    .header_icon{
+        display: none;
+    }
+    .header_account{
+        display: none;
+    }
+    .menu_icon{
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin-right: 24px;
+    }
+    .menu_icon > img{
+        width: 100%;
+        height: 100%;
+    }
+}
+@media (max-width: 320px){
+    .header{
+        margin: 24px 0 24px 0;
+    }
+    .title{
+        margin: 0;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+    }
+    .menu_icon{
+        display: block;
+        width: 24px;
+        height: 24px;
+        margin-right: 24px;
+    }
+    .menu_icon > svg {
+        width: 24px;
+        height: 24px;
+    }
+}
