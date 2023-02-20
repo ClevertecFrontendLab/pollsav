@@ -15,6 +15,7 @@ h4 {
   left: 0;
 }
 .book_page {
+  flex: auto;
   width: 1110px;
 }
 .category {

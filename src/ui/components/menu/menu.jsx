@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
 import { useGetCategoriesQuery } from '../../../redux/get-book';
+import { setCategories } from '../../../redux/slices/category-slice';
 import { toggleMenuMode } from '../../../redux/slices/menu-slice';
 import { Error } from '../error';
 import { Loader } from '../loader';
@@ -19,10 +20,6 @@ export const Menu = () => {
   const [menuOpen, toggleMenu] = useState(false);
   const [tab, setTab] = useState('books');
   const [category, setCategory] = useState('all');
-
-  if (isError) {
-    return <Error />;
-  }
 
   if (isLoading) {
     return <Loader />;
@@ -47,32 +44,40 @@ export const Menu = () => {
             <Arrow className={cn(s.arrow, { [s.close_arrow]: menuOpen === true })} />
           </div>
           <ul className={cn(s.category_wrap, { [s.close]: menuOpen === true })}>
-            <li
-              className={cn(s.category_link, { [s.active_category]: category === 'all' })}
-              data-test-id={window.innerWidth < 769 ? 'burger-books' : 'navigation-books'}
-              onClick={() => {
-                dispatch(toggleMenuMode(false));
-                toggleMenu(true);
-                setCategory('all');
-              }}
-              role='presentation'
-            >
-              <Link to={`/books/${'all'}`}>Все книги</Link>
-            </li>
-            {data.map((item) => (
-              <li
-                key={item.id}
-                className={cn(s.category_link, { [s.active_category]: item.path === category })}
-                onClick={() => {
-                  dispatch(toggleMenuMode(false));
-                  toggleMenu(true);
-                  setCategory(item.path);
-                }}
-                role='presentation'
-              >
-                <Link to={`/books/${item.path}`}>{item.name}</Link>
-              </li>
-            ))}
+            {isError ? (
+              <Error />
+            ) : (
+              <div>
+                <li
+                  className={cn(s.category_link, { [s.active_category]: category === 'all' })}
+                  data-test-id={window.innerWidth < 769 ? 'burger-books' : 'navigation-books'}
+                  onClick={() => {
+                    dispatch(toggleMenuMode(false));
+                    dispatch(setCategories('Все книги'));
+                    toggleMenu(true);
+                    setCategory('all');
+                  }}
+                  role='presentation'
+                >
+                  <Link to={`/books/${'all'}`}>Все книги</Link>
+                </li>
+                {data.map((item) => (
+                  <li
+                    key={item.id}
+                    className={cn(s.category_link, { [s.active_category]: item.path === category })}
+                    onClick={() => {
+                      dispatch(toggleMenuMode(false));
+                      dispatch(setCategories(item.name));
+                      toggleMenu(true);
+                      setCategory(item.path);
+                    }}
+                    role='presentation'
+                  >
+                    <Link to={`/books/${item.path}`}>{item.name}</Link>
+                  </li>
+                ))}
+              </div>
+            )}
           </ul>
         </li>
         <li
