@@ -13,7 +13,7 @@ export const Rating = ({ rating }) => {
 
   return (
     <div className={s.rating_wrap}>
-      {arr.map((item, index) => (
+      {arr.map((item) => (
         <Star
           key={`${item}+1`}
           className={cn(s.star, {

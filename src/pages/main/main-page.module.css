@@ -1,12 +1,14 @@
-.mainPage {
-  width: 1110px;
+.MainPage {
+  height: 100%;
 }
 .content_wrapper {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 .books_wrap {
+  height: 100%;
   width: 825px;
   display: flex;
   flex-wrap: wrap;
@@ -16,11 +18,24 @@
 .column {
   flex-direction: column;
 }
+.warning {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  color: #a7a7a7;
+}
+.center {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
 @media (max-width: 768px) {
-  .mainPage {
-    width: 640px;
+  .MainPage {
+    height: 100%;
   }
   .content_wrapper {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,17 +47,25 @@
   }
 }
 @media (max-width: 320px) {
-  .mainPage {
-    width: 288px;
+  .MainPage {
+    height: 100%;
   }
   .content_wrapper {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .books_wrap {
+    height: 100%;
     width: 288px;
     column-gap: 35px;
     row-gap: 32px;
+  }
+  .warning {
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
   }
 }

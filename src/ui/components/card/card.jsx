@@ -1,14 +1,14 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import cn from 'classnames';
 
 import notlogo from '../../../images/notimage.png';
+import { ColorizedText } from '../colorized-text';
 import { Rating } from '../rating';
 
 import s from './card.module.css';
 
 const host = 'https://strapi.cleverland.by';
 
-export const Card = ({ direction, detailsBook }) => {
+export const Card = ({ direction, detailsBook, nameOfBook }) => {
   if (direction === 'row') {
     return (
       <div className={s.card_wrap} data-test-id='card'>
@@ -23,7 +23,7 @@ export const Card = ({ direction, detailsBook }) => {
           {detailsBook?.rating ? <Rating rating={detailsBook.rating} /> : 'еще нет оценок'}
         </div>
         <div className={s.card_title}>
-          <p className={s.card_name}>{`${detailsBook.title}`}</p>
+          <ColorizedText direction={direction} text={detailsBook.title} search={nameOfBook} />
           <p className={s.card_author}>{`${detailsBook.authors[0]}, ${detailsBook.issueYear}`}</p>
         </div>
         <div className={cn(s.card_btn, { [s.booked]: detailsBook?.booking?.order === true })}>
@@ -44,7 +44,7 @@ export const Card = ({ direction, detailsBook }) => {
       </div>
       <div className={s.main_wrap}>
         <div className={s.card_title_cl}>
-          <p className={s.card_name_cl}>{`${detailsBook.title}`}</p>
+          <ColorizedText direction={direction} text={detailsBook.title} search={nameOfBook} />
           <p className={s.card_author_cl}>{`${detailsBook.authors[0]}, ${detailsBook.issueYear}`}</p>
         </div>
         <div className={s.second_wrap}>

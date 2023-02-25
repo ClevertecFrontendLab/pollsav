@@ -1,5 +1,3 @@
-import React from 'react';
-
 import s from './contract.module.css';
 
 export const Contract = ({ contentView }) => (

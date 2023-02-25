@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import cn from 'classnames';
 
 import reviewAvatar from '../../images/avatar-review.png';
@@ -16,7 +16,7 @@ import s from './bookpage.module.css';
 
 export const BookPage = () => {
   const category = useSelector((state) => state.category.category);
-  const { bookId } = useParams();
+  const { category: link, bookId } = useParams();
   const { data, isLoading, isError } = useGetBookByIdQuery(bookId);
   const [reviewToggle, setToggle] = useState(false);
   const [screenWidth, setWidth] = useState(window.innerWidth);
@@ -42,9 +42,15 @@ export const BookPage = () => {
           <div className={s.background}> </div>
           <div className={s.category}>
             <div className={s.category_wrap}>
-              <span className={s.type}>{data ? data.categories[0] : category}</span>
+              <span className={s.type}>
+                <Link to={`/books/${link}`} data-test-id='breadcrumbs-link'>
+                  {category}
+                </Link>
+              </span>
               <span className={s.slash}>/</span>
-              <span className={s.book}>{data ? data.title : null}</span>
+              <span className={s.book} data-test-id='book-name'>
+                {data ? data.title : null}
+              </span>
             </div>
           </div>
           {isError ? (
@@ -61,7 +67,7 @@ export const BookPage = () => {
                       <Slider className={s.info_img} mobile={true} desctop={false} images={data.images} />
                     ) : null}
                     <div className={s.info_wrap}>
-                      <h2>{data.title}</h2>
+                      <h2 data-test-id='book-title'>{data.title}</h2>
                       <span>{`${data.authors[0]}, ${data.issueYear}`}</span>
                       <button type='button'>Забронировать</button>
                     </div>
