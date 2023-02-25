@@ -1,11 +1,11 @@
-.rating_wrap{
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
+.rating_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .on {
-    fill: #FFBC1F;
-  }
+  fill: #ffbc1f;
+}
 .off {
-    fill: #fff;
+  fill: #fff;
 }

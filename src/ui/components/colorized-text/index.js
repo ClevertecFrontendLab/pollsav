@@ -1,0 +1,1 @@
+export { ColorizedText } from './colorized';

@@ -1,0 +1,35 @@
+.card_name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: black;
+}
+.card_name_cl {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+}
+@media (max-width: 768px) {
+  .card_name_cl {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 320px) {
+  .card_name_cl {
+    margin-bottom: 3px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
