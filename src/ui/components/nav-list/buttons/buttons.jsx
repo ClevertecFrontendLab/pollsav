@@ -1,5 +1,3 @@
-import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import cn from 'classnames';
 
 import { ReactComponent as ColumnButton } from './columnButton.svg';

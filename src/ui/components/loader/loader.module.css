@@ -10,6 +10,7 @@
   width: 100%;
   background: rgba(54, 54, 54, 0.3);
   backdrop-filter: blur(10px);
+  z-index: 100000000;
 }
 
 .spinner {
